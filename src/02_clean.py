@@ -7,15 +7,15 @@ df = pd.read_excel(DATA_PATH)
 print("原始行数:", len(df))
 df_clean = df.drop_duplicates()
 print("删重复后:", len(df_clean))
-# 剔除取消单/坏帐单：只保留纯数字的订单号
+# 剔除取消单/坏账单：只保留纯数字的订单号
 df_clean = df_clean[df_clean["InvoiceNo"].astype(str).str.isdigit()]
-print(len(df_clean))
+print(f"剔除取消单/坏账单后：{len(df_clean)}")
 # 剔除数量<=0
 df_clean = df_clean[df_clean["Quantity"] > 0]
-print(len(df_clean))
+print(f"剔除数量<=0后：{len(df_clean)}")
 # 剔除单价<=0
 df_clean = df_clean[df_clean["UnitPrice"] > 0]
-print(len(df_clean))
+print(f"剔除单价<=0后：{len(df_clean)}")
 # 派生新列：每行销售额 = 数量 * 单价
 df_clean["Amount"] = df_clean["Quantity"] * df_clean["UnitPrice"]
 print(f"总销售额：{df_clean['Amount'].sum():.2f}")
