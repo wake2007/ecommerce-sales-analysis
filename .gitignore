@@ -1,0 +1,19 @@
+# 虚拟环境：几千个文件，绝不能进仓库
+.venv/
+
+# 数据文件：体积大且可公开下载，用 README 说明来源
+data/raw/*
+data/processed/*
+
+# IDE 个人配置
+.idea/
+
+# Python 运行缓存
+__pycache__/
+*.pyc
+
+# Windows 系统文件
+Thumbs.db
+
+# 工具自动生成的目录（.workbuddy 是我这边的对话记录）
+.workbuddy/
