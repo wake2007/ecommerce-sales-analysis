@@ -27,3 +27,4 @@ top=result.sort_values("销售额",ascending=False).head(10)
 # 按销售额降序排序（ascending=False 表示从大到小），取前 10 行，.sort_values("某列")	按某一列的值，ascending=True（默认）= 升序，小 → 大
 print("=== Top 10 ===")
 print(top)
+print(top.round(2).to_markdown(index=False))# index=False 去掉编码列
