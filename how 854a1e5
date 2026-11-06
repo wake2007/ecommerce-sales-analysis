@@ -1,0 +1,47 @@
+[33mcommit 8ebae8306facd1b8ad20bf1d192069c04575c28e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: wake <1490174716@qq.com>
+Date:   Wed Nov 4 15:42:20 2026 +0800
+
+    feat:完成商品分析榜单，补充依赖清单与文档修正
+
+[33mcommit 854a1e51bcd46e8e65c4f6071261253cea395798[m
+Author: wake <1490174716@qq.com>
+Date:   Wed Nov 4 14:50:36 2026 +0800
+
+    feat:完成商品双榜分析，剔除特殊编码并输出含名称与均价的Top10榜单
+
+[33mcommit 331f6c6af9a676a50f781c48c01d9e0efd73ffd7[m
+Author: wake <1490174716@qq.com>
+Date:   Tue Nov 3 14:07:36 2026 +0800
+
+    docs: 补充月度趋势分析结论与图表引用
+
+[33mcommit 8122068e8d74a17ab5e4179eed0ec50afabf8fa1[m
+Author: wake <1490174716@qq.com>
+Date:   Mon Nov 2 14:59:10 2026 +0800
+
+    feat:新增总体预览指标，输出销售额/订单/商品核心KPI
+
+[33mcommit 8fc2a0beea2e0c8bdf60f1567bc82baef7b1337a[m
+Author: wake <1490174716@qq.com>
+Date:   Sun Nov 1 15:18:15 2026 +0800
+
+    refactor:为清洗步骤输出添加标签，修正注释错别字
+
+[33mcommit 8bdd6666f7992e63bceb109257eca1f79300dd84[m
+Author: wake <1490174716@qq.com>
+Date:   Sun Nov 1 15:12:22 2026 +0800
+
+    feat:完成数据清洗流程，输出processed数据集并新增销售额字段
+
+[33mcommit e29fcaafcc8fd5313f00cc31bb08b31d28a3b12e[m
+Author: wake <1490174716@qq.com>
+Date:   Sun Nov 1 14:28:57 2026 +0800
+
+    feat:完成数据清洗流程，剔除重复/取消单/零价记录
+
+[33mcommit 799e2ae364cbda225ca8d470cfbab2d2ad71aa54[m
+Author: wake <1490174716@qq.com>
+Date:   Sun Nov 1 13:45:28 2026 +0800
+
+    chore:初始化项目骨架，添加字段说明与清洗脚本
