@@ -17,3 +17,6 @@ Thumbs.db
 
 # 工具自动生成的目录（.workbuddy 是我这边的对话记录）
 .workbuddy/
+
+#数据库配置（含密码，绝不提交）
+db_config.py
