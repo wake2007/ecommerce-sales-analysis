@@ -20,6 +20,9 @@ print(f"剔除单价<=0后：{len(df_clean)}")
 df_clean["Amount"] = df_clean["Quantity"] * df_clean["UnitPrice"]
 print(f"总销售额：{df_clean['Amount'].sum():.2f}")
 print(f"订单数：{df_clean['InvoiceNo'].nunique()}")
+# 统一商品编码为大写：消除 15056BL / 15056bl 这类大小写混用导致的重复统计
+df_clean["StockCode"] = df_clean["StockCode"].astype(str).str.upper()
+print(f"统一大小写后商品数{df_clean['StockCode'].nunique()}")
 # 保存清洗结果
 OUT_DIR = BASE_DIR / "data" / "processed"  # 找到（创建）路径
 OUT_DIR.mkdir(parents=True,exist_ok=True)
