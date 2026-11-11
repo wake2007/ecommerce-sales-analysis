@@ -20,3 +20,9 @@ WHERE stock_code REGEXP '^[0-9]{5}[A-Za-z]{0,3}$'
 GROUP BY stock_code
 ORDER BY total DESC
 LIMIT 10;
+-- 4. 各国家客户数与消费额（JOIN 两张表，对应多表分析）
+SELECT c.country, COUNT(DISTINCT c.customer_id) AS 客户数, SUM(o.amount) AS 消费总额
+FROM customers c
+JOIN order_items o ON c.customer_id = o.customer_id
+GROUP BY c.country
+ORDER BY 消费总额 DESC;
