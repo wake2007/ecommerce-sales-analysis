@@ -23,6 +23,10 @@ print(f"订单数：{df_clean['InvoiceNo'].nunique()}")
 # 统一商品编码为大写：消除 15056BL / 15056bl 这类大小写混用导致的重复统计
 df_clean["StockCode"] = df_clean["StockCode"].astype(str).str.upper()
 print(f"统一大小写后商品数{df_clean['StockCode'].nunique()}")
+#统一每个客户的国家，取该客户最多出现的国家（众数），修复“一个客户多个国家”的录入错误
+mask = df_clean["CustomerID"].notna()
+country_mode=df_clean.loc[mask].groupby("CustomerID")["Country"].agg(lambda x: x.mode()[0])
+df_clean.loc[mask, "Country"] = df_clean.loc[mask, "CustomerID"].map(country_mode)
 # 保存清洗结果
 OUT_DIR = BASE_DIR / "data" / "processed"  # 找到（创建）路径
 OUT_DIR.mkdir(parents=True,exist_ok=True)
